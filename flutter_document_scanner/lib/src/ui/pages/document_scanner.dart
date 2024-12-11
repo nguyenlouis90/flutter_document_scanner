@@ -232,6 +232,10 @@ class _View extends StatelessWidget {
               break;
             }
 
+            if (generalStyles.widgetInsteadOfCameraPreview == null) {
+              Navigator.pop(context);
+            }
+
             page = generalStyles.widgetInsteadOfCameraPreview ??
                 const SizedBox.shrink();
             break;
