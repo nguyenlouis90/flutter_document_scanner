@@ -93,9 +93,11 @@ class DocumentScanner extends StatelessWidget {
               listenWhen: (previous, current) =>
                   current.statusTakePhotoPage != previous.statusTakePhotoPage,
               listener: (context, state) {
-                if (!generalStyles.showCameraPreview
-                    && generalStyles.widgetInsteadOfCameraPreview == null) {
+                print('showCameraPreview: ${generalStyles.showCameraPreview}');
+                if (!generalStyles.showCameraPreview) {
                   Navigator.pop(context);
+                  Navigator.pop(context);
+                  return;
                 }
 
                 if (generalStyles.hideDefaultDialogs) return;
